@@ -1,56 +1,29 @@
 \documentclass{beamer}
 \usepackage{amsfonts,amsmath,oldgerm}
 \usetheme{sintef}
-\usepackage{xeCJK}
 
+\usepackage{ctex}
+\usepackage{fontspec}
+\setsansfont{Times New Roman}
+\setCJKsansfont{LXGWWenKai-Regular.ttf}
 \newcommand{\testcolor}[1]{\colorbox{#1}{\textcolor{#1}{test}}~\texttt{#1}}
-
 \usefonttheme[onlymath]{serif}
 
 \titlebackground*{assets/background}
 
 \newcommand{\hrefcol}[2]{\textcolor{cyan}{\href{#1}{#2}}}
 
-\title{报告标题}
-\subtitle{报告副标题}
+\title{\CJKfontspec{Microsoft YaHei}报告标题}
+% \subtitle{报告副标题}
 % \course{Master's Degree in Computer Science}
-\author{作者1、作者2}
+% \author{作者1、作者2}
 % \IDnumber{1234567}
-\date{2023年3月}
+\date{2025年11月}
 
 \begin{document}
 \maketitle
 
-\begin{frame}
-
-This template is a based on \hrefcol{https://www.overleaf.com/latex/templates/sintef-presentation/jhbhdffczpnx}{SINTEF Presentation} from \hrefcol{mailto:federico.zenith@sintef.no}{Federico Zenith} and its derivation \hrefcol{https://github.com/TOB-KNPOB/Beamer-LaTeX-Themes}{Beamer-LaTeX-Themes} from Liu Qilong
-
-\vspace{\baselineskip}
-
-PKU style adaptation contributed by \hrefcol{https://shizhuming.github.io}{Zhuming Shi}
-
-\vspace{\baselineskip}
-
-In the following you find a brief introduction on how to use \LaTeX\ and the beamer package to prepare slides, based on the one written by \hrefcol{mailto:federico.zenith@sintef.no}{Federico Zenith} for \hrefcol{https://www.overleaf.com/latex/templates/sintef-presentation/jhbhdffczpnx}{SINTEF Presentation}
-
-% This template is released under \hrefcol{https://creativecommons.org/licenses/by-nc/4.0/legalcode}{Creative Commons CC BY 4.0} license
-
-\end{frame}
-
 \section{Introduction}
-
-\begin{frame}{Beamer for SINTEF slides}
-\begin{itemize}
-\item We assume you can use \LaTeX; if you cannot,
-\hrefcol{http://en.wikibooks.org/wiki/LaTeX/}{you can learn it here}
-\item Beamer is one of the most popular and powerful document
-classes for presentations in \LaTeX
-\item Beamer has also a detailed
-\hrefcol{http://www.ctan.org/tex-archive/macros/latex/contrib/beamer/doc/beameruserguide.pdf}{user
- manual}
-\item Here we will present only the most basic features to get you up to speed
-\end{itemize}
-\end{frame}
 
 \begin{frame}{Beamer vs. PowerPoint}
 Compared to PowerPoint, using \LaTeX\ is better because:
@@ -71,19 +44,6 @@ you write the content, the computer does the typesetting
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Getting Started}
-\framesubtitle{Selecting the SINTEF Theme}
-To start working with \texttt{sintefbeamer}, start a \LaTeX\ document with the
-preamble:
-\begin{block}{Minimum SINTEF Beamer Document}
-\verb|\documentclass{beamer}|\\
-\verb|\usetheme{sintef}|\\
-\verb|\begin{document}|\\
-\verb|\begin{frame}{Hello, world!}|\\
-\verb|\end{frame}|\\
-\verb|\end{document}|\\
-\end{block}
-\end{frame}
 
 \begin{frame}[fragile]{Title page}
 To set a typical title page, you call some commands in the preamble:
@@ -254,12 +214,6 @@ And this the second
 \end{block}
 \end{frame}
 
-\begin{chapter}[assets/background_negative]{}{Special Slides}
-\begin{itemize}
-\item Chapter slides
-\item Side-picture slides
-\end{itemize}
-\end{chapter}
 
 \footlinecolor{sintefred}
 \begin{frame}[fragile]{Chapter slides}

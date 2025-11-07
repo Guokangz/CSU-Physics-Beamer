@@ -104,7 +104,7 @@
 
 \setbeamerfont{author}{size=\small}
 \setbeamerfont{date}{size=\small}
-\setbeamerfont{title}{series=\bfseries}
+\setbeamerfont{title}{series=\bfseries,size=\Huge}
 \setbeamerfont{subtitle}{series=\mdseries,size=\small}
 \setbeamerfont{frametitle}{series=\bfseries}
 \setbeamerfont{framesubtitle}{series=\mdseries}
@@ -134,12 +134,14 @@
 
 % Define frame title and subtitle layout
 \setbeamertemplate{frametitle}{%
-  \vspace*{-3.5ex}
+  \vspace*{-5.5ex}
   \begin{beamercolorbox}[leftskip=2cm]{frametitle}%
     \usebeamerfont{frametitle}\insertframetitle\\
+    \vspace{1ex}
     \usebeamerfont{framesubtitle}\insertframesubtitle
   \end{beamercolorbox}
 }
+
 
 \def\@courseLabel{}
 \def\@IDnumber{}
@@ -157,6 +159,8 @@
     {\usebeamerfont{title}\inserttitle}
   
     {\usebeamerfont{subtitle}\insertsubtitle}
+
+    \vspace{1ex}
 
     {\usebeamerfont{subtitle}\@courseLabel}
     
@@ -279,7 +283,7 @@
         \Huge \inserttitle
         \vspace{5mm}
       }
-      \Large \textsl{\\Thank you for listening! \\ Any questions?}
+      \Large \textsl{\\Thank you for listening!}
     \end{minipage}
   \end{frame}
 \endgroup
