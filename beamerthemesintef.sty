@@ -97,7 +97,7 @@
 }
 \themecolor{white} % Default: white theme
 
-\setbeamercolor{title}{fg=maincolor,bg=white}
+\setbeamercolor{title}{fg=maincolor,bg=}
 \setbeamercolor{alerted text}{fg=sintefred}
 \setbeamercolor{author}{fg=black}
 \setbeamercolor{date}{fg=black}
@@ -294,14 +294,22 @@
 {
     \begingroup
     \themecolor{main}
-    \begin{frame}{Table of Contents}
-        \tableofcontents[currentsection]
+    \begin{frame}{目录}
+        \tableofcontents[hideallsubsections]
     \end{frame}
     \endgroup
 }
 
 % style of section presented in the table of contents
-\setbeamertemplate{section in toc}{$\blacktriangleright$~\inserttocsection}
+\setbeamerfont{section in toc}{size=\large}
+\setbeamertemplate{section in toc}{%
+  \vspace{8pt}
+  \ifnum\inserttocsectionnumber=\thesection
+    {\color{yellow}\textbf{$\blacktriangleright$~\inserttocsection}}
+  \else
+    {\color{white!80!gray!50}$\blacktriangleright$~\inserttocsection}
+  \fi
+}
 
 % automate subtitle of each frame
 \makeatletter

@@ -5,11 +5,12 @@
 \usepackage{ctex}
 \usepackage{fontspec}
 \setsansfont{Times New Roman}
-\setCJKsansfont{LXGWWenKai-Regular.ttf}[BoldFont = LXGWWenKai-Medium.ttf]
+\setCJKsansfont{LXGWWenKai-Regular.ttf}[BoldFont = LXGWZhenKaiGB-Regular.ttf]
 \newcommand{\testcolor}[1]{\colorbox{#1}{\textcolor{#1}{test}}~\texttt{#1}}
 \usefonttheme[onlymath]{serif}
 
-\titlebackground*{assets/background}
+\titlebackground*{assets/background-railway}
+\boolfalse{splittitle}
 
 \newcommand{\hrefcol}[2]{\textcolor{cyan}{\href{#1}{#2}}}
 
@@ -27,6 +28,7 @@
 
 \begin{frame}{Beamer vs. PowerPoint}
 Compared to PowerPoint, using \LaTeX\ is better because:
+\textbf{为什么}为什么
 \begin{itemize}
 \item It is not What-You-See-Is-What-You-Get, but
 What-You-\emph{Mean}-Is-What-You-Get:\\
@@ -235,7 +237,7 @@ And this the second
 \end{itemize}
 \end{frame}
 
-\begin{sidepic}{assets/background_alternative}{Side-Picture Slides}
+\begin{sidepic}{figures/fig1}{Side-Picture Slides}
 \begin{itemize}
 \item Opened with \texttt{$\backslash$begin\{sidepic\}\{<image>\}\{<title>\}}
 \item Otherwise, \texttt{sidepic} works just like \texttt{frame}
