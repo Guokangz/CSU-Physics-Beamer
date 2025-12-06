@@ -1,0 +1,19 @@
+\begin{frame}[fragile]{Title page}
+    To set a typical title page, you call some commands in the preamble:
+    \begin{block}{The Commands for the Title Page}
+        \begin{verbatim}
+            \title{Sample Title}
+            \subtitle{Sample subtitle}
+            \author{First Author, Second Author}
+            \date{\today} % Can also be (ab)used for conference name &c.
+        \end{verbatim}
+    \end{block}
+    You can then write out the title page with \verb|\maketitle|.
+
+    To set a \textbf{background image} use the \verb|\titlebackground| command
+    before \verb|\maketitle|; its only argument is the name (or path) of a graphic
+    file.
+
+    If you use the \textbf{starred version} \verb|\titlebackground*|, the image
+    will be clipped to a split view on the right side of the title slide.
+\end{frame}

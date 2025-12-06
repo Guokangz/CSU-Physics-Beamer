@@ -1,0 +1,67 @@
+\begin{frame}{Beamer vs. PowerPoint}
+	\vspace{1em}
+	Compared to PowerPoint, using \LaTeX\ is better because:
+	\begin{itemize}
+		\item It is not What-You-See-Is-What-You-Get, but
+		      What-You-\emph{Mean}-Is-What-You-Get:\\
+		      you write the content, the computer does the typesetting
+		\item Produces a \texttt{pdf}: no problems with fonts, formulas,
+		      program versions
+		\item Easier to keep consistent style, fonts, highlighting, etc.
+		\item Math typesetting in \TeX\ is the best:
+
+		      \vspace{1em}
+		      \begin{columns}
+			      \begin{column}{0.45\textwidth}
+				      \begin{equation*}
+					      \label{eq:ab_flushing}
+					      N_{i} =
+					      \color{purple}
+					      \overbrace{
+						      \tikzmarknode{qp}{\highlight{purple}{ \color{black}  $Q_p$ }} \color{black}\big( \tikzmarknode{tj1}{\highlight{NavyBlue}{ \color{black}  $t_{j+1}$}} \color{black} - \tikzmarknode{tj}{\highlight{Bittersweet}{ \color{black} $t_{j}$}}
+						      \color{black}\big) |
+						      \tikzmarknode{aj}{\highlight{purple}{ \color{black}   $\forall j$ }}
+						      \color{black}\big)
+					      }^{\substack{\text{\sf \footnotesize \textcolor{purple!85}{Some annotation about the
+								      }} \\ \text{\sf \footnotesize \textcolor{purple!85}{entire equation here.
+								      }} } }
+				      \end{equation*}
+
+				      \begin{tikzpicture}[overlay,remember picture,>=stealth,nodes={align=left,inner ysep=1pt},<-]
+					      % For "t_{j+1}"
+					      \path (tj1.north) ++ (-1.8,-1.8em) node[anchor=north west,color=NavyBlue!85] (tj1text){\textsf{\footnotesize (j+1)\textsuperscript{th} item}};
+					      \draw [color=NavyBlue](tj1.south) |- ([xshift=-0.3ex,color=NavyBlue]tj1text.south west);
+					      % For "t_{j}"
+					      \path (tj.north) ++ (0.1,-1.8em) node[anchor=north west,color=Bittersweet!85] (tjtext){\textsf{\footnotesize j\textsuperscript{th} item}};
+					      \draw [color=Bittersweet](tj.south) |- ([xshift=-0.3ex,color=Bittersweet]tjtext.south east);
+				      \end{tikzpicture}
+			      \end{column}
+
+			      \begin{column}{0.45\textwidth}
+				      \begin{equation*}
+					      \label{eq:ab_crypto}
+					      \hspace*{-6em}
+					      X_{i} = \frac{1}{\sum_{i=1}^{\tikzmarknode{n}{\highlight{purple}{N}}}
+					      \sum_{j=1}^{\tikzmarknode{mi}{\highlight{NavyBlue}{$M_i$}}}
+					      \tfrac{\tikzmarknode{lij}{\highlight{Bittersweet}{$l_i^j$}}}{\tikzmarknode{lmax}{\highlight{OliveGreen}{$l^{max}$}}}
+					      }
+				      \end{equation*}
+				      \vspace*{0.8\baselineskip}
+				      \begin{tikzpicture}[overlay,remember picture,>=stealth,nodes={align=left,inner ysep=1pt},<-]
+					      % For "N"
+					      \path (n.north) ++ (0,1.8em) node[anchor=south east,color=Plum!85] (ntext){\textsf{\footnotesize number of objects}};
+					      \draw [color=Plum](n.north) |- ([xshift=-0.3ex,color=Plum]ntext.south west);
+					      % For "M_i"
+					      \path (mi.north) ++ (0,3.5em) node[anchor=north west,color=NavyBlue!85] (mitext){\textsf{\footnotesize number of other objects}};
+					      \draw [color=NavyBlue](mi.north) |- ([xshift=-0.3ex,color=NavyBlue]mitext.south east);
+					      % For "l_i^j"
+					      \path (lij.north) ++ (0,1.9em) node[anchor=north west,color=Bittersweet!85] (lijtext){\textsf{\footnotesize size of j\textsuperscript{th} service}};
+					      \draw [color=Bittersweet](lij.north) |- ([xshift=-0.3ex,color=Bittersweet]lijtext.south east);
+					      % For "l_i^max"
+					      \path (lmax.north) ++ (-2.7,-1.5em) node[anchor=north west,color=xkcdHunterGreen!85] (lmaxtext){\textsf{\footnotesize maximum obj size}};
+					      \draw [color=xkcdHunterGreen](lmax.south) |- ([xshift=-0.3ex,color=xkcdHunterGreen]lmaxtext.south west);
+				      \end{tikzpicture}
+			      \end{column}
+		      \end{columns}
+	\end{itemize}
+\end{frame}

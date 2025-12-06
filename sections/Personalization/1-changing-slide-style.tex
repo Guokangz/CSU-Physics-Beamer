@@ -1,0 +1,24 @@
+\begin{frame}[fragile]{Changing Slide Style}
+	\begin{itemize}
+		\item You can select the white or \textit{maincolor} \textbf{slide style} \emph{in the
+			      preamble} with \verb|\themecolor{white}| (default) or \verb|\themecolor{main}|
+		      \begin{itemize}
+			      \item You should \emph{not} change these within the document: Beamer does
+			            not like it
+			      \item If you \emph{really} must, you may have to add
+			            \verb|\usebeamercolor[fg]{normal text}| in the slide
+		      \end{itemize}
+		\item You can change the \textbf{footline colour} with
+		      \verb|\footlinecolor{color}|
+		      \begin{itemize}
+			      \item Place the command \emph{before} a new \verb|frame|
+			      \item There are four ``official'' colors:
+			            \testcolor{maincolor}, \testcolor{sintefyellow},
+			            \testcolor{sintefgreen}, \testcolor{sintefdarkgreen}
+			      \item Default is no footline; you can restore it with
+			            \verb|\footlinecolor{}|
+			      \item Others may work, but no guarantees!
+			      \item Should \emph{not} be used with the \verb|maincolor| theme!
+		      \end{itemize}
+	\end{itemize}
+\end{frame}

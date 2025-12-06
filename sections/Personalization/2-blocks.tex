@@ -1,0 +1,29 @@
+\begin{frame}[fragile]{Blocks}
+    \begin{columns}
+        \begin{column}{0.3\textwidth}
+            \begin{block}{Standard Blocks}
+                These have a color coordinated with the footline (and grey in the blue theme)
+                \begin{verbatim}
+    \begin{block}{title}
+    content...
+    \end{block}
+    \end{verbatim}
+            \end{block}
+        \end{column}
+        \begin{column}{0.7\textwidth}
+            \begin{colorblock}[black]{sinteflightgreen}{Colour Blocks}
+                Similar to the ones on the left, but you pick the colour. Text will be white by
+                default, but you may set it with an optional argument.
+                \small
+                \begin{verbatim}
+    \begin{colorblock}[black]{sinteflightgreen}{title}
+    content...
+    \end{colorblock}
+    \end{verbatim}
+            \end{colorblock}
+            The ``official'' colours of colour blocks are: \testcolor{sinteflilla},
+            \testcolor{maincolor}, \testcolor{sintefdarkgreen}, and
+            \testcolor{sintefyellow}.
+        \end{column}
+    \end{columns}
+\end{frame}
