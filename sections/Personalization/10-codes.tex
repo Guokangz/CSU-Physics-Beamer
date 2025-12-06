@@ -1,0 +1,50 @@
+\begin{frame}[fragile]{Codes}
+    \setbeamercolor{block title example}{fg=white, bg=teal}
+    \setbeamercolor{block body example}{bg=teal!25}
+    
+    \setbeamercolor{block title alerted}{fg=white, bg=orange}
+    \setbeamercolor{block body alerted}{bg=orange!25}
+
+    \begin{itemize}
+        \item 使用 lstlisting 环境展示代码，可以设置不同的参数实现代码高亮和格式化。
+        \item 在导言区可以全局设置行号、边框和背景颜色等样式。
+    \end{itemize}
+
+    \begin{columns}[T]
+    
+        \begin{column}{0.45\textwidth}
+            \begin{exampleblock}{MATLAB 示例}
+                \centering
+                \begin{lstlisting}[
+                    language={matlab},
+                    basicstyle=\ttfamily\small
+                ]
+for i = 1:5 
+    totalSum = totalSum + i; 
+    disp(['i: ', num2str(i), ', 累加和: ', num2str(totalSum)]); % 输出
+end
+                \end{lstlisting}
+            \end{exampleblock}
+        \end{column}
+        
+        \begin{column}{0.45\textwidth}
+            \begin{alertblock}{Python 示例}
+                \centering
+                \begin{lstlisting}[
+                    language={python},
+                    basicstyle=\ttfamily\small,
+                    % caption={Python 函数定义与调用},
+                ]
+# 定义一个函数来计算平方
+def square(number):
+    return number ** 2 
+
+# 调用函数
+print(f"5 的平方是: {square(5)}")
+                \end{lstlisting}
+            \end{alertblock}
+        \end{column}
+        
+    \end{columns}
+
+\end{frame}

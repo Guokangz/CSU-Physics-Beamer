@@ -10,6 +10,7 @@
 
 \usepackage{ctex}
 \usepackage{fontspec}
+\newfontfamily\menlo{Menlo}
 \setsansfont{Times New Roman}
 \setCJKsansfont{LXGWWenKai-Regular.ttf}[BoldFont = LXGWZhenKaiGB-Regular.ttf]
 \newcommand{\testcolor}[1]{\colorbox{#1}{\textcolor{#1}{test}}~\texttt{#1}}
@@ -21,6 +22,26 @@
 \usepackage{xkcdcolors}
 \newcommand{\hrefcol}[2]{\textcolor{cyan}{\href{#1}{#2}}}
 \newcommand{\highlight}[2]{\colorbox{#1!15}{#2}}
+
+\usepackage{listings}
+\lstset{
+    backgroundcolor=\color{lightgray!10},
+    basicstyle=\ttfamily\small,
+    % numbers=left,
+    numberstyle=\tiny\menlo\color{gray},
+    columns=fullflexible,
+    tabsize=4,
+    breaklines=true,
+    captionpos=b,
+    commentstyle=\color{sintefgreen},
+    escapeinside={\%*}{*)},
+    keywordstyle=\color{blue},
+    stringstyle=\color{sintefyellow}\ttfamily,
+    showstringspaces=false,
+    frame=none,
+    rulesepcolor=\color{red!20!green!20!blue!20},
+    language=c++,
+}
 
 \title{\CJKfontspec{Microsoft YaHei}报告标题}
 % \subtitle{报告副标题}
@@ -38,18 +59,19 @@
 \input{sections/Introduction/3-writing-a-simple-slide}
 
 \section{Personalization}
+\footlinecolor{maincolor}
 \input{sections/Personalization/1-changing-slide-style}
 \input{sections/Personalization/2-blocks}
-\footlinecolor{}
 \input{sections/Personalization/3-using-colors}
 \input{sections/Personalization/4-adding-images}
-\input{sections/Personalization/5-splitting-in-columns}
 \footlinecolor{sintefred}
+\input{sections/Personalization/5-splitting-in-columns}
 \input{sections/Personalization/6-chapter-slides}
 \input{sections/Personalization/7-side-picture-slides}
 \footlinecolor{}
 \input{sections/Personalization/8-fonts}
 \input{sections/Personalization/9-looks}
+\input{sections/Personalization/10-codes}
 
 \section{Summary}
 \input{sections/Summary/1-good-luck}
