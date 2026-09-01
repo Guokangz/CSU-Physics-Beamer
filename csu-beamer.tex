@@ -10,12 +10,9 @@
 
 \usepackage{ctex}
 \usepackage{fontspec}
-\newfontfamily\menlo{Hack}
-\setsansfont{Times New Roman}
-\setCJKsansfont{LXGWWenKai-Regular.ttf}[BoldFont = LXGWZhenKaiGB-Regular.ttf]
-% 可选：系统装有 Microsoft YaHei 时可切换默认中文为微软雅黑：
-% \setCJKsansfont{Microsoft YaHei}
-\setmonofont{Hack}
+% 中文标题字体（可选）：仅在中文标题处手动使用 {\titlefont 中文标题}。
+% 正文（中英文）不显式指定字体，交给 XeLaTeX / Beamer 默认配置。
+\newCJKfontfamily\titlefont[BoldFont = LXGWZhenKaiGB-Regular.ttf, Path=fonts/]{LXGWWenKai-Regular.ttf}
 \newcommand{\testcolor}[1]{\colorbox{#1}{\textcolor{#1}{test}}~\texttt{#1}}
 \usefonttheme[onlymath]{serif}
 
@@ -31,7 +28,7 @@
     backgroundcolor=\color{lightgray!10},
     basicstyle=\ttfamily\small,
     % numbers=left,
-    numberstyle=\tiny\menlo\color{gray},
+    numberstyle=\tiny\color{gray},
     columns=fullflexible,
     tabsize=4,
     breaklines=true,
@@ -46,7 +43,7 @@
     language=c++,
 }
 
-\title{中南大学物理学术报告模板}
+\title{{\titlefont 中南大学物理学术报告模板}}
 \subtitle{CSU Physics Beamer Template}
 % \course{Master's Degree in Computer Science}
 \author{姓名}

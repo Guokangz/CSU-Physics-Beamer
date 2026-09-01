@@ -18,14 +18,9 @@ and the SINTEF/Sapienza theme lineage
 
 ## Fonts
 
-Default Chinese font: **LXGWWenKai** (fonts bundled in this repository:
-`LXGWWenKai-Regular.ttf` / `LXGWZhenKaiGB-Regular.ttf`).
-
-Optional: if you have **Microsoft YaHei** installed, uncomment
-`\setCJKsansfont{Microsoft YaHei}` in `csu-beamer.tex`.
-
-Latin font: Times New Roman; code font: Hack (both must be installed
-or replaced in `csu-beamer.tex`).
+- XeLaTeX / xeCJK is used for CJK typesetting.
+- LXGWWenKai bundled with the template is used optionally for Chinese titles.
+- Body fonts follow the local TeX/system font configuration.
 
 ## Compile
 
