@@ -327,3 +327,5 @@ TSWLatexianTemp*
 
 ## Local additions (CSU Physics Beamer fork):
 missfont.log
+# QA render output (per-page PNGs, contact sheets)
+render-*/
