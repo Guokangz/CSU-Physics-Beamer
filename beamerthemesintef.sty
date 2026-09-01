@@ -50,8 +50,8 @@
 % The title page hides the footline locally in \maketitle.
 % (Legacy \footlinepayoff/\footlinecolor no longer affect the footline look itself;
 %  \footlinecolor still coordinates block-title colours.)
-\newcommand{\@csuMottoImage}{assets/校训}   % 校训 (odd-frame right side)
-\newcommand{\@csuSpiritImage}{assets/校风}  % 校风 (even-frame left side)
+\newcommand{\@csuMottoImage}{assets/csu-motto}    % 校训 (odd-frame right side)
+\newcommand{\@csuSpiritImage}{assets/csu-spirit}  % 校风 (even-frame left side)
 \newlength{\csufootimageheight}
 \setlength{\csufootimageheight}{2.8mm}
 \newcommand{\@csuFootImage}[1]{%
@@ -172,6 +172,14 @@
 % Define the title page
 \setbeamertemplate{title page}{%
   \vskip0pt plus 1filll%
+  % Faded CSU seal watermark in the bottom-right corner. The tikzpicture is
+  % `overlay`, so it takes no part in the title box layout. The PNG itself
+  % already carries the desired transparency - no extra opacity is applied.
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=south east,inner sep=0pt]
+      at ([xshift=-0.7cm,yshift=0.8cm]current page.south east)
+      {\includegraphics[width=0.22\paperwidth,keepaspectratio]{assets/csu-seal-watermark.png}};
+  \end{tikzpicture}%
   % Reposition the box in an inelegant way - but it works!
   \hspace{-12mm}
   \vspace{20mm}
