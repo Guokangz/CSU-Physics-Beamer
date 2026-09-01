@@ -10,14 +10,17 @@
 
 \usepackage{ctex}
 \usepackage{fontspec}
-\newfontfamily\menlo{Menlo}
+\newfontfamily\menlo{Hack}
 \setsansfont{Times New Roman}
 \setCJKsansfont{LXGWWenKai-Regular.ttf}[BoldFont = LXGWZhenKaiGB-Regular.ttf]
+% 可选：系统装有 Microsoft YaHei 时可切换默认中文为微软雅黑：
+% \setCJKsansfont{Microsoft YaHei}
+\setmonofont{Hack}
 \newcommand{\testcolor}[1]{\colorbox{#1}{\textcolor{#1}{test}}~\texttt{#1}}
 \usefonttheme[onlymath]{serif}
 
-\titlebackground*{assets/background-railway}
-\boolfalse{splittitle}
+% 标题页：纯白背景（不再使用背景照片；
+% assets/background-railway.jpg 保留为 legacy/example asset）
 
 \usepackage{xkcdcolors}
 \newcommand{\hrefcol}[2]{\textcolor{cyan}{\href{#1}{#2}}}
@@ -43,12 +46,12 @@
     language=c++,
 }
 
-\title{\CJKfontspec{Microsoft YaHei}报告标题}
-% \subtitle{报告副标题}
+\title{中南大学物理学术报告模板}
+\subtitle{CSU Physics Beamer Template}
 % \course{Master's Degree in Computer Science}
-% \author{作者1、作者2}
+\author{姓名}
 % \IDnumber{1234567}
-\date{2025年11月}
+\date{\today}
 
 \begin{document}
 \maketitle
