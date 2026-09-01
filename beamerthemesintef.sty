@@ -44,14 +44,34 @@
 \newcommand{\@footlineauthor}{\insertauthor \enspace$\vert$\enspace}
 \newcommand{\@footlinepayoff}{\@footlineauthor\inserttitle}
 \newcommand{\footlinepayoff}[1]{\renewcommand{\@footlinepayoff}{#1}}
-% Define footline content
+% --- Footline: mirror-alternating strip (white band, darkgray page number) ---
+% Odd frames:  page number left, 校训 right;  even frames: 校风 left, page number right.
+% Parity comes from framenumber, so all overlay pages of one frame share the same footer.
+% The title page hides the footline locally in \maketitle.
+% (Legacy \footlinepayoff/\footlinecolor no longer affect the footline look itself;
+%  \footlinecolor still coordinates block-title colours.)
+\newcommand{\@csuMottoImage}{assets/校训}   % 校训 (odd-frame right side)
+\newcommand{\@csuSpiritImage}{assets/校风}  % 校风 (even-frame left side)
+\newlength{\csufootimageheight}
+\setlength{\csufootimageheight}{2.8mm}
+\newcommand{\@csuFootImage}[1]{%
+  \includegraphics[height=\csufootimageheight,keepaspectratio]{#1}}
 \setbeamertemplate{footline}{%
-  \begin{beamercolorbox}[wd=\textwidth,ht=5mm,dp=3mm,rightskip=1cm,leftskip=1cm]{footline}
-  \insertframenumber/\inserttotalframenumber
-  \ifstrempty{\@footlinepayoff}{}{%
-    \usebeamerfont{footline}\hfill\@footlinepayoff
-  }
-  \end{beamercolorbox}
+  \begingroup
+  \setbeamercolor{footline}{fg=darkgray,bg=white}% white strip on every page
+  \begin{beamercolorbox}[wd=\paperwidth,ht=3mm,dp=3mm,leftskip=1cm,rightskip=1cm]{footline}%
+    \usebeamerfont{footline}% \scriptsize
+    \ifodd\value{framenumber}%
+      \raisebox{-0.8mm}{\insertframenumber\,/\,\inserttotalframenumber}%
+      \hfill
+      \raisebox{-0.5\csufootimageheight}{\@csuFootImage{\@csuMottoImage}}%
+    \else
+      \raisebox{-0.5\csufootimageheight}{\@csuFootImage{\@csuSpiritImage}}%
+      \hfill
+      \raisebox{-0.8mm}{\insertframenumber\,/\,\inserttotalframenumber}%
+    \fi
+  \end{beamercolorbox}%
+  \endgroup
 }
 
 % Set footline AND coordinate blocks with it
@@ -68,7 +88,7 @@
     % \setbeamercolor{block body}{fg=white,bg=#1}
   }%
 }
-\footlinecolor{} % Default: no footline
+\footlinecolor{} % Default: block titles in maincolor (footline look is fixed by the template above)
 
 \pgfdeclareimage[width=0.09\paperwidth]{logo}{assets/logo_RGB}
 \pgfdeclareimage[width=0.09\paperwidth]{whitelogo}{assets/logo_RGB_negative}
@@ -196,6 +216,7 @@
 % Overwrite the maketitle command for the title page
 \renewcommand{\maketitle}{
 \begingroup
+  \setbeamertemplate{footline}{}% no footline on the title page
   \ifdefempty{\@TitleBackground}{}{% Skip if \@TitleBackground is empty
     \setbeamertemplate{background}{%
       \ifbool{splittitle}{%
